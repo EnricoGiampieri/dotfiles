@@ -1,0 +1,7 @@
+#!/bin/bash
+# versione che splitta il terminale, per tornare al terminale
+# lo chiudo semplicemente
+nvr -cc split --remote-wait +'set bufhidden=wipe' $@
+# versione che rimpiazza il terminale, per mantenere lo split devo fare lo
+# switch invece di chiuderlo
+# nvr --remote-wait +'set bufhidden=wipe' $@

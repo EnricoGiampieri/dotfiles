@@ -1,0 +1,8 @@
+#! /bin/bash
+# https://unix.stackexchange.com/questions/18714/command-like-column-t-that-instead-keeps-separators-in-output
+# serve a compensare la funzione column che non funziona bene
+# cambio il carattere standard per evitare problemi se la linea contiene degli slash
+delim="${1:-,}"
+interm="${2:-@}"
+sed "s/$delim/$interm$delim/g" | column -t -s "$interm" | sed "s/  $delim/$delim/g"
+
